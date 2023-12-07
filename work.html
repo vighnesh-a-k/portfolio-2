@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css" >
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="nav-button">HOME</a>
+            <a href="education.html" class="nav-button ">EDUCATION</a>
+          
+            <a href="work.html" class="nav-button active">PROJECT</a>
+            <a href="skill.html" class="nav-button   ">SKILLS</a>
+            <a href="contact.html" class="nav-button">CONTACT</a>
+        </nav>
+
+
+    </header>
+    
+        <main>
+            <div class="project-container">
+               
+                    <h2 class="project-title">PROJECTS</h2>
+
+                    
+        
+             
+                    <div class="carousel-container">
+                        <img onclick="prevSlide()" class="prev slider" src=" img/left.png">
+                        
+                        <div class="carousel-wrapper">
+                        <div class="carousel-item">
+                            <h2>Project1</h2>
+                            <p>Lorem ipsum dolor sit, amet consectet
+                            
+                            </p>
+                        </div>
+                        <div class="carousel-item">
+
+
+                            <h2>Project2</h2>
+                            <p>Lorem ipsum dolor sit, amet consectet</p>
+                        </div>
+                        <div class="carousel-item">
+                            <h2>Project3</h2>
+                            <p>Lorem ipsum dolor sit, In this fantastic</p>
+                        </div>
+                        </div>
+                        <img  onclick="nextSlide()" class="next slider" src="img/right.png" >
+                    </div>
+                    
+            </div>
+            
+            <a href="document.pdf" class="download-button" download>Download Resume</a>
+
+    </main>
+
+    <script>
+        let currentSlide = 0;
+    
+        function showSlide(index) {
+          const carouselWrapper = document.querySelector('.carousel-wrapper');
+          const slideWidth = document.querySelector('.carousel-item').offsetWidth;
+          carouselWrapper.style.transform = `translateX(-${index * slideWidth}px)`;
+          currentSlide = index;
+        }
+    
+        function nextSlide() {
+          const totalSlides = document.querySelectorAll('.carousel-item').length;
+          currentSlide = (currentSlide + 1) % totalSlides;
+          showSlide(currentSlide);
+        }
+    
+        function prevSlide() {
+          const totalSlides = document.querySelectorAll('.carousel-item').length;
+          currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+          showSlide(currentSlide);
+        }
+      </script>
+
+
+    
+
+    
+
+
+    
+    
+</body>
+</html>
